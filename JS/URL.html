@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form URL  validation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript">
+function formValidation()  
+{  
+ var uurl = document.Application.urll;
+
+if(validateURL(uurl))
+{
+} 
+}
+function validateURL(uurl)
+{
+var regexp = new RegExp("^http(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$");
+        if (uurl.value.match(regexp)) 
+        { 
+        	alert("Submitted Successfully")
+            return true;
+        } 
+        else {
+            alert("Invalid Url!");
+            uurl.focus();
+            return false;
+        }
+}
+</script>
+</head>
+<body>
+<form name='Application' onsubmit="return formValidation();">  
+<ul>  
+		<li><b>If you have a personal blog. Enter your Blog URL:</b><input type="url" id="url" name="urll"></li>
+
+<center><li><input type="submit" name="submit" value="Submit"/></li> </center> 
+</ul>
+</form>
+</body>
+</html>
+

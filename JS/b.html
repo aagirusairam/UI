@@ -1,0 +1,288 @@
+<html>
+<head>
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style type="text/css">
+body {
+  margin: 30;
+  margin-left: 30;
+}
+
+form li {  
+list-style: none;  
+margin-bottom: 5px;  
+}  
+  
+form ul li{  
+float: left;  
+clear: left;  
+width: 100px;  
+text-align: right;  
+margin-right: 10px;  
+font-family:Verdana, Arial, Helvetica, sans-serif;  
+font-size:14px;  
+}  
+  
+form ul li input, select {  
+float: left;  
+margin-bottom: 10px;  
+}  
+  
+form textarea {  
+float: left;  
+width: 350px;  
+height: 150px;  
+}  
+  
+[type="submit"] {  
+clear: left;  
+margin: 20px 0 0 230px;  
+font-size:18px  
+}  
+.form{
+	background:  lightblue;
+	border: solid;
+	border-color: blue;
+}
+</style>
+
+<script type="text/javascript">
+
+  function validateForm() 
+  {
+    var uarea = document.myform.area;
+    var uaot = document.myform.AOt;
+    var urange = document.myform.range;
+    var uao = document.myform.AO;
+    var ufirst = document.myform.firstname;
+    var ulast = document.myform.lastname;
+    var male = document.myform.male;
+    var female = document.myform.female;
+    var udob = document.myform.bday;
+    var uphoto = document.myform.photo;
+    var uareaa = document.myform.textarea;
+    var uphno = document.myform.phno;
+    var uurl = document.myform.urll;
+
+if(validateAreaCode(uarea))
+{
+if(validateAOType(uaot))
+{
+if(validateRange(urange)) 
+{
+if(validateAONumber(uao)) 
+{
+if(validateFirstName(ufirst))
+{
+if(validateLastName(ulast))
+{
+if(validateTextarea(uareaa))
+{
+if(validatePhone(uphno,10,15))
+{
+if(validateImageupload(uphoto))
+{
+}
+}
+}
+} 	
+}
+}
+}
+}
+} return false;
+}
+
+function validateAreaCode(uarea)
+{
+ var number = /^[0-9]+$/;   
+if(uarea.value.match(number))  
+{  
+return true;  
+}  
+else  
+{  
+alert('Area code must have numeric characters only and should not be empty');  
+uarea.focus();  
+}  
+}
+
+function validateAOType(uaot){
+ var letters = /^[A-Z a-z]+$/;  
+if(uaot.value.match(letters))  
+{  
+return true;  
+}  
+else  
+{  
+alert('AO Type must have alphabet characters only and should not be empty');  
+uaot.focus();  
+return false;  
+}  
+ } 
+
+  function validateRange(urange){
+ var number = /^[0-9]+$/;  
+if(urange.value.match(number))  
+{  
+return true;  
+}  
+else  
+{  
+alert('Range code must have numeric characters only and should not be empty');  
+uarea.focus();  
+return false;  
+}  
+  }
+
+ function  validateAONumber(uao){
+  	var number = /^[0-9]+$/;  
+if(uao.value.match(number))  
+{  
+return true;  
+}  
+else  
+{  
+alert('AO Numbers must have numeric characters only and should not be empty');  
+uarea.focus();  
+return false;  
+}  
+}
+
+function validateFirstName(ufirst){
+   var letters = /^[A-Za-z]+$/;  
+if(ufirst.value.match(letters))  
+{  
+return true;  
+}  
+else  
+{  
+alert('FirstName must contains alphabet characters only and it should not be empty');  
+uaot.focus();  
+return false;  
+}  
+  }
+
+function validateLastName(ulast){
+  	var letters = /^[A-Za-z]+$/;  
+if(ulast.value.match(letters))  
+{  
+return true;  
+}  
+else  
+{  
+alert('LastName must contains alphabet characters only ');  
+uaot.focus();  
+return false;  
+}  
+  }
+
+function validateTextarea(uareaa){
+    var uarea=document.myform.textarea;
+    if(uarea=="")
+    {
+    	alert("If you have any extra details you can fill here or skip by using NA ");
+        return false;
+    }
+    return true;
+  }
+
+ function validatePhone(uphno,mx,my){
+ 	var uphnoLen = uphno.value.length;  
+if (uphnoLen == 0 || uphnoLen >= my || uphnoLen < mx)  
+{  
+	alert("Phone Number should not be empty / length should be between "+mx+" to "+my);  
+	uphno.focus();  
+	return false;  
+	}  
+	return true;  
+	}
+
+function validateURL(uurl)
+{
+var regexp = new RegExp("^http(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$");
+        var uurl = document.getElementById("url").value;
+        if (uurl.value.match(regexp)) 
+        {
+            return true;
+        } else {
+            alert("Invalid Url!");
+            uurl.focus();
+            return false;
+        }
+
+function validateImageupload(uphoto)
+{
+var uphoto= document.myform.photo;
+var allowed_extensions = new Array("jpg","png","gif");
+  var file_extension = uphoto.split('.').pop().toLowerCase(); 
+for(var i = 0; i < allowed_extensions.length; i++)
+{
+    if(allowed_extensions[i]==file_extension)
+    {
+        return true; // valid file extension
+    }
+}
+return false;
+}
+  }
+</script>
+</head>
+
+<body>
+	<form  name='myform'  onsubmit= "return validateForm();" >
+		<ul>
+			<li><b>Area Code: <input type="text" name="area"></li>
+			<li><b>AO Type: <input type="text" name="AOt"></li>
+			<li><b>Range Code: <input type="text" name="range"></li>
+			<li><b>AO No: <input type="text" name="AO" ></center></li>
+		<center>
+			<li><input type="submit" value="Submit" name="submit"></li>
+		</center>
+     
+		Please Select title:<li><input type="checkbox" name="check1">Shri
+		<input type="checkbox" name="check1">Smt.
+		<input type="checkbox" name="check1">Kumari
+		<input type="checkbox" name="check1">M/s
+	    </li>
+		<li>FirstName: <input type="text" id="abc" size="15" name="firstname"></li>
+		<li>Last Name: <input type="text" id="abc"  size="10" name="lastname"></li>
+	</br>
+
+	<li><b>Gender </b>
+		<input type="radio" name="mf" value="">Male
+        <input type="radio" name="mf" value="">Female</br></li></br></br>
+   
+     	<li> <b>Date Of Birth:</b> <input type="date" name="bday">
+     </li>
+ 
+     <li> <b>Photo:</b><input type="file" name="photo" onchange="validateImageupload(this.value);">
+     </li>
+
+      <li><b>If you want to provide any extra Details:
+      	 <textarea name="textarea" rows="5" cols="50"></textarea></li>
+
+<li><b>Choose your fav color: <input type="color" name="color">
+  <b>Choose PAN Type:</b><select name="select" value= "Default">
+  <option >PAN for individual</option> 
+  <option  selected>PAN for Business</option>
+  <option >PAN for NRI's</option>
+</select> </li>  
+
+
+<li><b>Phone Number</b>
+		<input type="text" name="phno" max="15" min="10"></li>
+	<b>Age</b>
+	<li><input type="number" name="age" min=18 max=50><b>Range of your monthly expenses in lacs b/w 1 to 10</li>
+	<li><input type="range" min="1" max="10"></li>
+     <li><b>If you are old user? Please search for your Details</b>
+	   <input type="search" id="Search" placeholder="Search here">
+    <button>Search</button>
+	</li>
+		<li><b>If you have a personal blog. Enter your Blog URL:</b><input type="url" id="url" name="urll"></li>
+</br>
+
+	<li><b>You can reset the form here</b>
+	<input type="reset" value="Reset"></li></ul>
+	</form>
+	</body>
+	</html>

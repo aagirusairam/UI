@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Time Object</title>
+</head>
+<body>
+<script> 
+var count=5;
+function countDown()
+{
+document.getElementById("Myheading").innerHTML=count;
+count--;
+if (count<0)
+{
+clearInterval(time);
+document.getElementById("Myheading").innerHTML="Click Now";
+}
+}
+var time=setInterval(countDown, 1000);
+</script>
+<h1 id="Myheading"></h1>
+</body>
+</html>

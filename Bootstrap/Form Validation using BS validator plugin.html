@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BS Form Validation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.5/validator.min.js">
+</script>
+</head>
+<body>
+<div class="container">
+<div class="panel panel-primary" style="width:550px, margin:0px;">
+<div class="panel-heading">FORM VALIDATION USING BOOTSTRAP</div>
+<div class="panel-body">
+<form data-toggle="validator" role="form" id="myForm" class="form-inline">
+<!-- Check-box -->
+<div class="form-group">
+<div class="checkbox">                 
+<label class="control-label">Please Select Title:<br><br>Shri.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input  data-error="Please check atleast one checkbox." class="form-control" type="checkbox" data-toggle="toggle" name="check" required="true"></label><br><br>
+
+<div class="checkbox">                 
+<label class="control-label">Smt.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox"  class="form-control" name="check" data-toggle="toggle" ></label><br><br>
+<div class="checkbox">                 
+<label class="control-label">Kumari.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" class="form-control"  name="check" data-toggle="toggle" ></label><br><br>
+<div class="checkbox">                 
+<label class="control-label">M/s.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox" name="check"  class="form-control" data-toggle="toggle" ></label>
+</div></div></div></div>
+</div>
+<br><br>
+
+<!-- UserName -->
+<div class="form-group has-feedback">
+<label class="control-label" for="uname">Username:  </label>
+<div class="input-group"><span class="input-group-addon">   <i class="glyphicon glyphicon-user"></i></span>
+<input class="form-control" data-error="Please enter username" id="uname" type="text" name="username" placeholder="UserName" required="true" autofocus>
+<span class="glyphicon form-control-feedback"></span>
+<div class="help-block with-errors"></div></div>
+</div><br><br>
+
+<!--Email-->
+<div class="form-group has-feedback">
+<label class="control-label" for="email">Email:  </label>
+<div class="input-group"><span class="input-group-addon">   <i class="glyphicon glyphicon-envelope"></i></span>
+<input class="form-control" data-error="Please enter your Email correctly" id="email" type="email" name="email" placeholder="Email" required>
+<span class="glyphicon form-control-feedback"></span>
+<div class="help-block with-errors"></div></div>
+</div><br><br>
+
+
+<!-- Password -->
+<div class="form-group has-feedback">
+<label class="control-label" for="pass">Password:</label>
+<div class="form-group">
+<div class="input-group"><span class="input-group-addon"> <i class="glyphicon glyphicon-asterisk"></i></span>
+<input class="form-control" data-error="Password must be atleast 8 characters" id="pass" type="password" name="Password" 
+ placeholder="Password" required>
+<span class="glyphicon form-control-feedback"></span>
+<div class="help-block with-errors"></div></div>
+</div><br><br>
+
+<!-- Twitter -->
+<div class="form-group has-feedback">
+<label for="twitter" class="control-label">Twitter</label>
+<div class="input-group">
+<span class="input-group-addon">@</span>
+<input type="text" pattern="^[_A-z0-9]{1,}$" maxlength="15" class="form-control" id="twitter" data-error="Please give ur twitter id" required>
+</div>
+<span class="glyphicon form-control-feedback"></span>
+<div class="help-block with-errors"></div>
+</div><br><br>
+
+
+
+<!-- Gender -->
+<div class="form-group">
+<div data-toggle="buttons">
+<div class="btn-group">
+<div class="input-group">
+<label class="control-label" for="gender">Gender:</label>&nbsp;
+<label class="btn btn-primary">
+<input type="radio" name="gender" id="gender" value="male" class="sr-only"  required>Male</label>&nbsp;&nbsp;
+<label class="btn btn-primary">
+<input type="radio" name="gender" id="gender" class="sr-only" value="female" required>Female</label>
+<div class="help-block with-errors"></div></div>
+</div></div><br><br>
+
+
+<!-- Text Area -->
+<div class="form-group has-feedback">
+  <label class="control-label" for="comment">Comment:</label>
+  <textarea class="form-control" data-error="Please give your comments" rows="5" cols="30" id="comment" placeholder="comments" required=""></textarea>
+  <span class="glyphicon form-control-feedback"></span>
+  <div class="help-block with-errors"></div>
+</div><br><br>
+
+<!-- Phone Number -->
+<div class="form-group has-feedback">
+<label class="control-label" for="mobile">Phone Number:  </label>
+<div class="input-group"><span class="input-group-addon"> <i class="glyphicon glyphicon-phone"></i></span>
+<input class="form-control" data-error="Please enter your Phone Number correctly" id="mobile" type="text" name="Phone Number" 
+ placeholder="Phone Number" required>
+<span class="glyphicon form-control-feedback"></span>
+<div class="help-block with-errors"></div></div>
+</div><br><br>
+
+<!-- Photo Upload -->
+<div class="form-group">
+<label class="control-label" for="photo">Upload a Photo:  </label>
+<div class="input-group"><span class="input-group-addon"> <i class="glyphicon glyphicon-paperclip"></i></span>
+<input class="form-control" data-error="Please Upload your photograph" id="photo" type="file" name="Upload" required>
+<div class="help-block with-errors"></div></div>
+</div><br><br>
+
+<!-- Age Field -->
+<div class="form-group has-feedback">
+<label class="control-label" for="age">Enter your Age:</label>
+<input type="text" class="form-control" name="age" id="age" min=18 max=60 data-error="Please Enter your age b/w 18 & 60" required>&nbsp;&nbsp;
+<span class="glyphicon form-control-feedback"></span>
+<div class="help-block with-errors"></div></div>
+<br><br>
+
+
+<!-- URL -->
+<div class="form-group has-feedback">
+<label class="control-label" for="url">Enter your Blog URL: </label>
+<div class="input-group"><span class="input-group-addon"> <i class="glyphicon glyphicon-globe"></i></span>
+<input class="form-control" data-error="Invalid url" id="url" type="url" name="url" required>
+<span class="glyphicon form-control-feedback"></span>
+<div class="help-block with-errors"></div></div>
+</div><br><br>
+
+
+
+<!-- Remember -->
+<div class="checkbox" >
+    <label class="control-label">&nbsp;&nbsp;<input class="form-control" data-toggle="toggle" type="checkbox"> Remember Me</label>
+    <div class="help-block with-errors"></div>
+  </div><br><br>
+
+<!--Submit  Button -->
+  <div class="form-group">
+  <button type="submit" class="btn btn-primary btn-default pull-left">Submit</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </div>
+
+<!--Cancel Button -->
+<div class="form-group">
+<button type="submit" class="btn btn-danger btn-default pull-left">
+<span class="glyphicon glyphicon-remove"></span> Cancel</button>
+<p>Need <a href="#">help?</a></p>
+</div></div>
+
+</form></div></div></div>
+</body>
+</html>
