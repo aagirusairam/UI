@@ -1,0 +1,52 @@
+<html>
+<head>
+<title>BackBone with  Rest Get</title>
+<script src = "https://code.jquery.com/jquery-2.1.3.min.js"
+type = "text/javascript"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"
+type = "text/javascript"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"
+type = "text/javascript"></script>
+</head>
+<body>
+    <h2>Jersey RESTful Web Application!</h2>
+    <form action="rest/product/add" method="post">  
+Enter Id:<input type="text" name="id"/><br/><br/>  
+Enter Name:<input type="text" name="name"/><br/><br/>  
+Enter Price:<input type="text" name="price"/><br/><br/>  
+<input type="submit" value="Add Product"/>  
+</form>  
+<div id="tasks"></div>
+<script>
+var Redis= new Backbone.Model({
+    id:'10',
+    name:'zion',
+    price:'650',
+    
+    urlRoot: '/rest/product'
+    
+});
+Backbone.sync=function(method, model, options){
+	document.write(method + ": " + model.get('id')+ "   " +model.get('name')+"   "+model.get('price')+"   ");
+    console.log(JSON.stringify(arguments));
+}
+Redis.save();
+// Redis.save({id:'1'});
+
+var RedisCollection= Backbone.Collection.extend({
+    model: Redis
+});
+
+var CollectionView= Backbone.View.extend({
+	initialize: function(){
+	     console.log('view  has been initialized');
+		}
+	});
+var rediscollection= new RedisCollection();
+	rediscollection.create({
+		id:"102"
+});
+var myview=new CollectionView();
+</script>
+</body>
+</html>
