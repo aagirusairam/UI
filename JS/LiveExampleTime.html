@@ -1,0 +1,29 @@
+<html>
+<head>
+<title>Time Object</title>
+</head>
+<body>
+<script> 
+var count=0;
+var time;
+function myCount()
+{
+
+document.getElementById("text").value=count;
+
+count++; 
+time=setTimeout(myCount,1000);
+}
+
+function stopCount()
+{
+clearTimeout(time);
+}
+
+</script>
+<input type="button" value="Count Down Start" onclick="myCount()">
+<input type="text" id="text">
+<input type="button" value="Count Down Stop" onclick="stopCount()">
+
+</body>
+</html>

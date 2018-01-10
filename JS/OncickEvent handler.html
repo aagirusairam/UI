@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>Onclick Event Handler</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+function copyText()
+{
+
+
+var x = document.getElementById("field1").value;
+document.getElementById("field2").value=x;
+}
+
+</script>
+
+Name: <input type="text" id="field1"><br><br><br>
+Name: <input type="text" id="field2"><br><br><br>
+<input type="button" value="Copy It" onclick="copyText()">
+</body>
+</html>

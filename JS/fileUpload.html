@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form File Upload Button  validation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript">
+function formValidation()  
+{  
+ var uphoto = document.Application.photo;
+
+if(validateImageupload(uphoto))
+{
+} 
+}
+function validateImageupload(uphoto)
+{
+var allowed_extensions = new Array("jpg","png","gif");
+  var file_extension = uphoto.split('.').pop().toLowerCase(); 
+for(var i = 0; i < allowed_extensions.length; i++)
+{
+    if(allowed_extensions[i]==file_extension)
+    {
+        alert("image uploaded successfully");
+        window.location.reload();
+                return true; // valid file extension
+    }
+    else
+    {
+    	alert("Please upload appropriate file with extensions like jpg, png, gif");
+    	uphoto.focus();
+    	return false;
+    }
+}
+}
+</script>
+</head>
+<body>
+<form name='Application' onsubmit="return formValidation();">  
+<ul>  
+<li> <b>Photo:</b><input type="file" name="photo" >
+     </li> 
+<center><li><input type="submit" name="submit" value="Submit"/></li> </center> 
+</ul>
+</form>
+</body>
+</html>
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form Radio Button  validation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript">
+function formValidation()  
+{  
+var m = document.Application.male;  
+var f = document.Application.female; 
+if(validateGender(m,f))  
+{  
+} 
+function validateGender(m,f)  
+{  
+x=0;  
+	if(m.checked)   
+	{  
+	x++;  
+	} 
+	if(f.checked)   
+	{  
+	x++;  
+	}
+	if(x==0)  
+	{  
+	alert('Select Male/Female');  
+	m.focus();  
+	return false;  
+	} 
+	else
+	{
+		alert('Form Succesfully Submitted');  
+window.location.reload();
+return true; 
+	} 
+}
+}
+</script>
+</head>
+<body>
+<form name='Application' onsubmit="return formValidation();">  
+<ul>  
+<li><label id="gender">Gender:</label></li>  
+<li><input type="radio" name="male" value="Male" /><span>Male</span></li>  
+<li><input type="radio" name="female" value="Female" /><span>Female</span></li> 
+<center><li><input type="submit" name="submit" value="Submit"/></li> </center> 
+</ul>
+</form>
+</body>
+</html>
+

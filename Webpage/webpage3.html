@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Webpage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+
+body {
+  margin: 0;
+}
+.header{
+    margin: 0;
+    background-color: #000000;
+    padding: 0px;
+    text-align: center;
+    width: 100%;
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+li
+{
+  float:left;
+
+}
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+a:hover{
+    background-color: #d9d9d9;
+    color: #000000;
+}
+.dropdown{
+display: none;
+position: absolute;
+background-color: #fff;
+color:#000000;
+text-align: center;
+width: 150px;
+overflow: hidden;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+padding: 0px;
+z-index: 1;
+}
+.more:hover .dropdown{
+  background: #123556;
+  color:#000000;
+  text-align: center;
+  display: block;
+  box-sizing: border-box;
+  color:#000000;
+
+}
+.search{
+display: block;
+float:right;
+padding:0;
+margin-right: 5px;
+}
+.fa
+{
+size: 100;
+box-sizing: border-box;
+ display: block;
+    color: white;
+    text-align: center;
+}
+.header .search:hover{
+  background: #ff0000;
+  overflow: hidden;
+  display: block;
+}
+
+.gallery {
+    margin: 5px;
+    border: 1px solid #ccc;
+    width: 180px;
+    float: left;
+}
+
+.gallery li img:hover{
+    border: 1px solid #777;
+    opacity: 1;
+}
+
+.gallery li img {
+    width: 100%;
+    height: auto;
+    opacity: 0.5;
+   float: left;
+
+}
+.desc {
+    padding: 15px;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+<div class="header">
+<ul>
+  <li><a href="#home">HOME</a></li>
+  <li><a href="#band">BAND</a></li>
+  <li><a href="#tour">TOUR</a></li>
+  <li><a href="#contact">CONTACT</a></li>
+  <div class="more">
+  <li><a href="#more">MORE</a>
+  <div class="dropdown">
+  <a href="#merchandise">Merchandise</a>
+  <a href="#extras">Extras</a>
+  <a href="#media">Media</a></div>
+  </li></div>
+<div class="search"><li>
+<a href="javascript:void(0)"><i class="fa fa-search" style="float:right"></i></a>
+</li></div>
+  </ul>  
+</div></div>
+<img src="chicago.jpg" alt="IMAGE" style="width: 100%" href="JavaScript:void(0)">
+<br><br><br>
+<center><h1>THE BAND</h1></center>
+<br>
+<center><h4 style="color:#808080; font: arial">We love music</h4></center>
+<center style="float:right">We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+</center>
+</div>
+<div class="gallery" >
+<ul>
+<li>
+  <a target="_blank" href="abc.jpg">
+    <center><img align="center" src="abc.jpg" alt="IMAGE" width="200" height="100"></center>
+  </a>
+  <div class="desc" align="center"> NAME</div></li>
+    <li><a target="_blank" href="abc.jpg">
+    <center><img align="center" src="abc.jpg" alt="IMAGE" width="200" height="100"></center></a>
+  <div class="desc" align="center"> NAME</div></li>
+  <li>  <a target="_blank" href="abc.jpg">
+    <center><img align="center"src="abc.jpg" alt="IMAGE" width="200" height="100"></center>
+  </a><div class="desc" align="center"> NAME</div></li></ul>
+  </div>
+
+
+
+
+</body>
+</html>

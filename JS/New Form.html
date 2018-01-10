@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Form validation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script type="text/javascript">
+function formValidation()  
+{  
+var uname = document.Application.username;  
+var passid = document.Application.pass;  
+var uid = document.Application.userid;  
+var uadd = document.Application.address;  
+var ucountry = document.Application.country;  
+var upin = document.Application.pin;  
+var uemail = document.Application.email;  
+var male = document.Application.male;  
+if(username_validation(uname))  
+{  
+if(pass_validation(pass,7,12))  
+{  
+if(userid_validation(uid,5,12))  
+{  
+if(alphanumeric(uadd))  
+{   
+if(countryselect(ucountry))  
+{  
+if(allnumeric(upin))  
+{  
+if(ValidateEmail(uemail))  
+{  
+if(validateGender(male))  
+{  
+}  
+}   
+}  
+}   
+}  
+}  
+}  
+}  
+return false;  
+  
+} 
+function username_validation(uname)  
+{   
+var letters = /^[A-Za-z]+$/;  
+if(uname.value.match(letters))  
+{  
+return true;  
+}  
+else  
+{  
+alert('Username must have alphabet characters only');  
+uname.focus();  
+return false;  
+}  
+}  
+function pass_validation(pass,mx,my)  
+{  
+var passid_len = pass.value.length;  
+if (passid_len == 0 ||passid_len >= my || passid_len < mx)  
+{  
+alert("Password should not be empty / length be between "+mx+" to "+my);  
+passid.focus();  
+return false;  
+}  
+return true;  
+}  
+function userid_validation(uid,mx,my)  
+{  
+var uid_len = uid.value.length;  
+if (uid_len == 0 || uid_len >= my || uid_len < mx)  
+{  
+alert("User Id should not be empty / length be between "+mx+" to "+my);  
+uid.focus();  
+return false;  
+}  
+return true;  
+}  
+function alphanumeric(uadd)  
+{   
+var letters = /^[0-9a-zA-Z]+$/;  
+if(uadd.value.match(letters))  
+{  
+return true;  
+}  
+else  
+{  
+alert('User address must have alphanumeric characters only');  
+uadd.focus();  
+return false;  
+}  
+}  
+function countryselect(ucountry)  
+{  
+if(ucountry.value == "Default")  
+{  
+alert('Select your country from the list');  
+ucountry.focus();  
+return false;  
+}  
+else  
+{  
+return true;  
+}  
+}  
+function allnumeric(upin)  
+{   
+var numbers = /^[0-9]+$/;  
+if(upin.value.match(numbers))  
+{  
+return true;  
+}  
+else  
+{  
+alert('ZIP code must have numeric characters only');  
+upin.focus();  
+return false;  
+}  
+}  
+function ValidateEmail(uemail)  
+{  
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+if(uemail.value.match(mailformat))  
+{  
+return true;  
+}  
+else  
+{  
+alert("You have entered an invalid email address!");  
+uemail.focus();  
+return false;  
+}  
+}
+function validateGender(male)  
+{  
+x=0;  
+if(male.checked)   
+{  
+x++;  
+} 
+if(x==0)  
+{  
+alert('Select Male/Female');  
+male.focus();  
+return false;  
+}  
+}  
+
+</script>
+<style type="text/css">
+h1 {  
+margin-left: 70px;  
+}  
+form li {  
+list-style: none;  
+margin-bottom: 5px;  
+}  
+  
+form ul li {  
+float: left;  
+clear: left;  
+width: 100px;  
+text-align: right;  
+margin-right: 10px;  
+font-family:Verdana, Arial, Helvetica, sans-serif;  
+font-size:14px;  
+}  
+  
+form ul li input, select, span {  
+float: left;  
+margin-bottom: 10px;  s
+}  
+  
+form textarea {  
+float: left;  
+width: 350px;  
+height: 150px;  
+}  
+  
+[type="submit"] {  
+clear: left;  
+margin: 20px 0 0 230px;  
+font-size:18px  
+}  
+</style>
+<body onload="document.Application.username.focus();">  
+<h1>Application Form</h1>  
+<p>Use tab keys to move from one input field to the next.</p>  
+<form name='Application' onsubmit="return formValidation();">  
+<ul>  
+<li>User Name:<input type="text" name="username" size="12" /></li>  
+<li>Password:<input type="password" name="pass" size="12" /></li>  
+<li>User ID:<input type="text" name="userid" size="50" /></li>  
+<li>Address:<textarea name="address" cols="5" rows="10"/></textarea></li>   
+<li>Country:<select name="country">  
+<option selected="" value="Default">(Please select a country)</option>  
+<option value="AF">Australia</option>  
+<option value="AL">Canada</option>  
+<option value="DZ">India</option>  
+<option value="AS">Russia</option>  
+<option value="AD">USA</option>  
+</select></li>  
+<li>PIN Code<input type="text" name="pin" /></li>  
+<li>Email:<input type="text" name="email" size="50" /></li>  
+<li><label id="gender">Gender:</label></li>  
+<li><input type="radio" name="male" value="Male" /><span>Male</span></li>  
+<li><input type="radio" name="male" value="Female" /><span>Female</span></li>  
+<li>Select Language: <input type="checkbox" name="en" value="en" checked /><span>English</span></li>  
+<li><input type="checkbox" name="en" value="noen" /><span>Non English</span></li>  
+<li>About:<textarea name="desc" id="desc"></textarea></li>  
+<li>Date Of Birth:<input type="date" name="bday"></li>
+<li>Photo:<input type="file" name="photo" onchange="validateImageupload(this.value);"></li>
+<li>Choose your fav color:<input type="color" name="color"></li>
+<li>Phone Number<input type="text" name="phno" max="15" min="10"></li>
+<li>Age:<input type="number" name="age" min=18 max=50><li>
+<li>Range of your monthly expenses in lacs b/w 1 to 10<input type="range" min="1" max="10"></li>
+<li>If you are old user? Please search for your Details<input type="search" id="Search" placeholder="Search here">
+    <button>Search</button></li>
+<li>If you have a personal blog. Enter your Blog URL:<input type="url" id="url" name="urll"></li>
+<li>You can reset the form here<input type="reset" value="Reset" align="top"></li>
+<center><li><input type="submit" name="submit" value="Submit"/></li> </center> 
+</ul>  
+</form>  
+</body>  
+</html>  

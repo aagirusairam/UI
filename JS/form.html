@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sample Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<script type="text/javascript">
+
+
+  function validateForm() 
+  {
+    var uarea = document.myform.area;
+    var uaot = document.myform.AOt;
+    var urange = document.myform.range;
+    var uao = document.myform.AO;
+    var ufirst = document.myform.firstname;
+    var ulast = document.myform.lastname;
+    var male = document.myform.male;
+    var female = document.myform.female;
+    var udob = document.myform.bday;
+    var uphoto = document.myform.photo;
+    var uareaa = document.myform.textarea;
+    var uphno = document.myform.phno;
+    var uurl = document.myform.urll;
+if(validateAreaCode(uarea))
+{
+if(validateAOType(uaot))
+{
+if(validateRange(urange)) 
+{
+if(validateAONumber(uao)) 
+{
+if(validateFirstName(ufirst))
+{
+if(validateLastName(ulast))
+{
+if(validateTextarea(uareaa))
+{
+if(validatePhone(uphno,10,15))
+{
+	if(validateURL(uurl))
+{
+} 
+}
+}
+}
+} 	
+}
+}
+}
+  } return false;
+}
+
+function validateAreaCode(uarea)
+{
+ var number = /^[0-9]+$/;   
+if(uarea.value.match(number))  
+{  
+return true;  
+}  
+else  
+{  
+alert('Area code must have numeric characters only and should not be empty');  
+uarea.focus();  
+}  
+}
+
+function validateAOType(uaot){
+ var letters = /^[A-Z a-z]+$/;  
+if(uaot.value.match(letters))  
+{  
+return true;  
+}  
+else  
+{  
+alert('AO Type must have alphabet characters only and should not be empty');  
+uaot.focus();  
+return false;  
+}  
+ } 
+
+  function validateRange(urange){
+ var number = /^[0-9]+$/;  
+if(urange.value.match(number))  
+{  
+return true;  
+}  
+else  
+{  
+alert('Range code must have numeric characters only and should not be empty');  
+uarea.focus();  
+return false;  
+}  
+  }
+
+ function  validateAONumber(uao){
+  	var number = /^[0-9]+$/;  
+if(uao.value.match(number))  
+{  
+return true;  
+}  
+else  
+{  
+alert('AO Numbers must have numeric characters only and should not be empty');  
+uarea.focus();  
+return false;  
+}  
+}
+
+function validateFirstName(ufirst){
+   var letters = /^[A-Za-z]+$/;  
+if(ufirst.value.match(letters))  
+{  
+return true;  
+}  
+else  
+{  
+alert('FirstName must contains alphabet characters only and it should not be empty');  
+uaot.focus();  
+return false;  
+}  
+  }
+
+function validateLastName(ulast){
+  	var letters = /^[A-Za-z]+$/;  
+if(ulast.value.match(letters))  
+{  
+return true;  
+}  
+else  
+{  
+alert('LastName must contains alphabet characters only ');  
+uaot.focus();  
+return false;  
+}  
+  }
+
+function validateTextarea(uareaa){
+    var uarea=document.myform.textarea;
+    if(uarea=="")
+    {
+    	alert("If you have any extra details you can fill here or skip by using NA ");
+        return false;
+    }
+    return true;
+  }
+
+ function validatePhone(uphno,mx,my){
+ 	var uphnoLen = uphno.value.length;  
+if (uphnoLen == 0 || uphnoLen >= my || uphnoLen < mx)  
+{  
+	alert("Phone Number should not be empty / length should be between "+mx+" to "+my);  
+	uphno.focus();  
+	return false;  
+	}  
+	return true;  
+	}
+
+
+}
+function validateURL(uurl)
+{
+var regexp = new RegExp("^http(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$");
+        if (uurl.value.match(regexp)) 
+        { 
+        	alert("Submitted Successfully")
+            return true;
+        } 
+        else {
+            alert("Invalid Url!");
+            uurl.focus();
+            return false;
+        }
+}
+</script>
+<style type="text/css">
+
+body {
+  margin: 0;
+}
+.header{
+	text-align: center;
+	background: #FF3366;
+}
+.header1{
+font-size: 15px;
+text-align: center;
+	background: #FF3366;
+	height: 68px;
+}
+.type{
+	width:100px;
+	height:auto;
+}
+.form{
+	background:  lightblue;
+	border: solid;
+	border-color: blue;
+	list-style-type: none;
+}
+.line {
+   position:absolute;
+   width:100%;
+   top: 15%;
+   color:black;
+}
+form ul li
+{
+	list-style-type: none;
+}
+</style>
+</head>
+<body onload="document.myform.area.focus();">
+ <div class="form" >
+	<div class="header">
+		Form No.49A<br>
+		Application For Allotment of Permanant Account Number<br>
+		[In Case of Indian Citizens/Indian Companies/Entities Incorporated in India/Unincorporated entities formed in India]
+	</div>
+	<div class="header1">
+		Under Section 139A of the Income Tax Act,1961<br>
+		To avoid mistake(s),please follow the accompanying instructions and exaples befor e filling up the form.
+	</div></br></br>
+
+	<hr class="line">
+
+	<div class="AO">
+		<center>
+		<form name="myform" onsubmit="return validateForm();" >
+		<ul>
+			<li><b>Area Code:&nbsp;<input type="text" name="area"   value=" "></li>
+			<li><b>AO Type:&nbsp;<input type="text" name="AOt"   value=" "></li></li>
+			<li><b>Range Code:&nbsp;<input type="text" name="range"  value=""></li>
+			<li><b>AO No:&nbsp;<input type="text" name="AO"   value=" "></center></li>
+			<li><center><div class="submit">
+		<input type="submit" value="Submit" name="submit"></li>
+
+		</br>Sir,<br>
+	&nbsp;&nbsp;I/We hereby request that a pan is alloted to me/us.</br>
+	&nbsp;&nbsp;I/We give below necessary particulars.
+	</div>
+     </br></br>
+     
+	<li><div class="FullName">
+		&nbsp;&nbsp;<b>Full Name</b>&nbsp;&nbsp;</br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Please Select title:<input type="checkbox" name="check1">Shri
+		<input type="checkbox" name="check1">Smt.
+		<input type="checkbox" name="check1">Kumari
+		<input type="checkbox" name="check1">M/s</br></br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;FirstName: <input type="text" id="abc" size="15" name="firstname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		Last Name: <input type="text" id="abc"  size="10" name="lastname">
+	</div></br></li>
+
+	<li><div class="gender">&nbsp;&nbsp;<b>Gender&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+		<input type="radio" name="mf" value="">Male
+        <input type="radio" name="mf" value="">Female</br></br></br>
+    </div></li>
+
+   <li> <div class="dob">
+     	&nbsp;&nbsp;<b>Date Of Birth:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="date" name="bday">
+     </div></br></br></br></li>
+ 
+<li><div class="image">
+      &nbsp;&nbsp;<b>Photo:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="file" Value="" name="photo" >
+      </div></br></li>
+
+   <li> <div class="textArea">
+      	&nbsp;&nbsp;<b>If you want to provide any extra Details:</b></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      	 <textarea name="textarea" rows="5" cols="50"></textarea></div></br></li>
+
+  <li><div class="color" >&nbsp;&nbsp;<b>Choose your fav color: &nbsp;&nbsp;</b><input type="color" name="color"></div></br></li>
+        
+   <li> <div class="select">
+        &nbsp;&nbsp;<b>Choose PAN Type:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="select">
+  <option value="">PAN for individual</option> 
+  <option value="" selected>PAN for Business</option>
+  <option value="">PAN for NRI's</option>
+</select>   
+</div></br></br></li>
+
+	<li><div class="mob"><b>&nbsp;&nbsp;Phone Number</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="text" name="phno" max="15" min="10"></div></br></li>
+
+	<li><div class="num"><b>&nbsp;&nbsp;Age</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<input type="number" name="age" min=18 max=50>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	<div class="range">&nbsp;&nbsp;<b>Range of your monthly expenses in lacs b/w 1 to 10</b></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="range" min="1" max="10"></div></br></li>
+
+	<li><div class="search">&nbsp;&nbsp;<b>If you are old user? Please search for your Details</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	   <input type="search" id="Search" placeholder="Search here">
+    <button>Search</button>
+	</div></br></li>
+
+	<li><div class="url">
+		&nbsp;&nbsp;<b>If you have a personal blog. Enter your Blog URL:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="url" id="url" name="urll">
+	</div></br></li>
+
+	<li><div class="reset">
+	&nbsp;&nbsp;&nbsp;&nbsp;<b>You can reset the form here</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="reset" value="Reset"></div>
+
+	
+	</div></br></center></li></ul></form></center></div></div>
+	
+	</body>
+	</html>

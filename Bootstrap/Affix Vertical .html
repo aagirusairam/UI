@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .affix {
+      top: 20px;
+      z-index: 9999 !important;
+  }
+  .affix ~ .container{
+    position: relative;
+    top: 50px;
+  }
+    #home{
+    padding-top:50px;
+    height:500px;
+    color: #fff; 
+    background-color: #1E88E5;
+  }
+  #product{
+    padding-top: 50px;
+    height:500px;
+    color: #fff; 
+    background-color: #ff3399;
+  }
+  #about{
+    padding-top:50px;
+    height:500px;
+    color: #fff; 
+    background-color: #ff9800;
+  }
+  #services{
+    padding-top:50px;
+    height:500px;
+    color: #fff; 
+    background-color: #00bcd4;
+  }
+  </style>
+</head>
+<body data-spy="scroll" data-target="#myNav" data-offset="50" >
+
+<div class="container-fluid" style="background-color:#2196F3;color:#fff;height:200px;" >
+  <h1>Bootstrap Affix Example</h1>
+  <h3>Fixed (sticky) vertical sidenav on scroll</h3>
+  <p>Scroll this page to see how the left navigation menu behaves with data-spy="affix".</p>
+  <p><strong>The left menu sticks to the page when you have scrolled a specified amount of pixels.</strong></p>
+</div>
+<br>
+
+<div class="container">
+  <div class="row">
+    <div id="myNav">
+    <nav class="col-sm-3">
+      <ul class="nav nav-pills nav-stacked" data-spy="affix" data-offset-top="205">
+       <li><a href="#home">Home</a></li>
+       <li><a href="#product">Product</a></li>
+       <li><a href="#about">About</a></li>
+       <li><a href="#services">Services</a></li>
+       </ul>
+    </nav>
+    <div class="col-sm-9">   
+  <div id="home" class="container">
+  <h1>Home</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="product" class="container">
+  <h1>Product</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="about" class="container">
+  <h1>ABOUT</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+<div id="services" class="container">
+  <h1>Services</h1>
+  <p>Try to scroll this section and look at the navigation bar while scrolling! Try to scroll this section and look at the navigation bar while scrolling!</p>
+</div>
+</div>
+</div>
+</div></div>
+</body>
+</html>

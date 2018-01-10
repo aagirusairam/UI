@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> Concat </title>
+</head>
+<body>
+<script type="text/javascript">
+
+ 
+ // concat
+var arr_one=new Array("vishnu","ritvek","pavan");
+var arr_two=new Array("Raj","King","Quuen");
+
+var arr_three=arr_one.concat(arr_two);
+
+for(var i in arr_three){
+
+document.write(arr_three[i]+"<br>");
+}
+
+
+
+
+ //Join 
+var arr_name=new Array();
+arr_name[0]="hi";
+arr_name[1]="My";
+arr_name[2]="Name";
+arr_name[3]="Ritvek";
+
+var showValues=arr_name.join(" ");
+document.write(showValues);
+
+
+ //Sort & Reverse
+var mySort=new Array("B","Q","M","A","Z","O","C");
+document.write(mySort+"<br>")
+document.write(mySort.sort()+"<br>")
+document.write(mySort+"<br>")
+document.write(mySort.reverse()+"<br>")
+
+
+// push & Pop
+
+var arr_name=new Array();
+arr_name[0]="Hello";
+arr_name[1]="world";
+arr_name[2]="Testing";
+document.write(arr_name+"<br>")
+
+arr_name.push("now");
+
+
+document.write(arr_name+"<br>");
+
+arr_name.pop();
+arr_name.pop();
+
+
+
+document.write(arr_name+"<br>")
+</script>
+
+</body>
+</html>

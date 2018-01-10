@@ -1,0 +1,138 @@
+   <div class="email">
+&nbsp;&nbsp;<b>Email Id:</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="email" 
+
+ value= "Enter ur Email" name="Email"> </div></br></br>
+
+
+
+
+
+
+
+
+  var number = /^[0-9]+$/;  
+if(uarea.value.match(number))  
+{  
+return true;  
+}  
+else  
+{  
+alert('Area code must have numeric characters only');  
+uarea.focus();  
+return false;  
+} 
+
+
+
+
+
+
+if(validateRadio(male,female))
+{
+
+
+ function validateRadio(male,female)
+{  
+x=0;  
+  
+if(male.checked)   
+{  
+x++;  
+} 
+if(female.checked)  
+{  
+x++;   
+}  
+if(x==0)  
+{  
+alert('Select Male/Female');  
+male.focus();  
+return false;  
+}  
+else  
+{  
+alert('Form Succesfully Submitted');  
+window.location.reload()  
+return true;  
+}  
+}
+
+
+
+
+
+
+if(validateGender(mf))
+{
+function validateGender(mf)  
+{  
+x=0;   
+if(mf.checked)   
+{  
+x++;  
+} 
+if(x==0)  
+{  
+alert('Select Male/Female');  
+mf.focus();  
+return false;  
+}   
+return true;  
+}  
+
+
+
+
+if(validateDOB(udob))
+{
+
+ function validateDOB(udob)
+ {
+       if(udob=="")
+       {
+       	alert("Please give your DOB Details");
+         return false;
+       }
+       return true;
+  }
+
+
+
+
+ if(validateImageupload(uphoto))
+{ 
+//validation for file upload
+function validateImageupload(uphoto)
+{
+var uphoto= document.myform.photo;
+var allowed_extensions = new Array("jpg","png","gif");
+  var file_extension = uphoto.split('.').pop().toLowerCase(); 
+for(var i = 0; i < allowed_extensions.length; i++)
+{
+    if(allowed_extensions[i]==file_extension)
+    {
+        return true; // valid file extension
+    }
+}
+return false;
+}
+
+
+
+
+
+
+if(validateURL(uurl))
+{ }
+function validateURL(uurl)
+{
+var regexp = new RegExp("^http(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$");
+        var uurl = document.getElementById("url").value;
+        if (uurl.value.match(regexp)) 
+        {
+            return true;
+        } else {
+            alert("Invalid Url!");
+            uurl.focus();
+            return false;
+        }

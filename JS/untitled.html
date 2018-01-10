@@ -1,0 +1,155 @@
+var x = document.forms["myform"]["firstname"].value;
+    var url = document.getElementById("url").value;
+    var email=document.myform.Email;
+    var url=document.myform.url;
+    var male=document.myform.male;
+    var female=document.myform.female;
+
+
+    if (x == "") {
+        alert("FirstName must be filled out");
+        return false;
+    }
+     var l = document.forms["myform"]["lastname"].value;
+    if (l == "") {
+        alert("LastName must be b/w 1 to 10 characters in length");
+        return false;
+    }
+//Second....
+       var y=document.myform.area;
+       if(y.value==""){
+       	alert("Enter a valid Area Code");
+         area.focus();
+         return false;
+     }
+       	var z=document.forms["myform"]["AOt"].value;
+       if(z==""){
+       	alert("Please Enter Ao type");
+       	return false;
+     }
+       	var z=document.forms["myform"]["range"].value;
+       if(z==""){
+       	alert("Please enter range code");
+        return false;
+    }
+
+       	var a=document.forms["myform"]["AO"].value;
+       if(a==""){
+       	alert("Please Enter AO Number");
+       	return false;
+     }
+       	var b=document.forms["myform"]["bday"].value;
+       if(b==""){
+       	alert("Please give your DOB Details");
+         return false;
+       }
+       	var c=document.forms["myform"]["textarea"].value;
+       if(c==""){
+       	alert("If you have any extra details you can fill here or skip by using "NA" ");
+        return false;
+     }
+      	var d=document.forms["myform"]["phno"].value;
+       if(d.length<15){
+       	alert("Please give a valid phone number");
+        return false;
+     }
+    if(Validate(url))  
+    {  
+	if(validateEmail(Email))  
+	{  
+	if(validateCheckbox(check1))  
+	{  
+	if(validateImageupload(photo))  
+	{   
+	if(myFunction(abc))  
+	{  
+	if(validateRadio(male,female))  
+	{  
+	}  
+    }
+    }
+    }
+    }
+    }return false;
+}
+        function Validate(url) {
+        var regexp = new RegExp("^http(s?)\:\/\/[0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*(:(0-9)*)*(\/?)([a-zA-Z0-9\-\.\?\,\'\/\\\+&amp;%\$#_]*)?$");
+        var url = document.getElementById("url").value;
+        if (url.value.match(regexp)) 
+        {
+            return true;
+        } else {
+            alert("Invalid Url!");
+            regexp.focus();
+            return false;
+        }
+    }
+     
+function validateEmail(Email)
+{
+	var email=document.myform.Email;
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+if(email.value.match(mailformat))  
+{  
+ return true;  
+}  
+else  
+{  
+ alert("You have entered an invalid email address!");  
+ email.focus();  
+ return false;  
+}  
+}
+function validateCheckbox(check1)
+{
+var check=document.forms["myform"]["check1"].value;
+var firstname=document.myform.firstname;
+    if ((check.checked == false) && (firstname.value == ""))
+    {
+        window.alert("Please enter your firstname.");
+        firstname.focus();
+        return false;
+    }
+}
+function validateImageupload(photo)
+{
+  var allowed_extensions = new Array("jpg","png","gif");
+  var file_extension = photo.split('.').pop().toLowerCase(); 
+for(var i = 0; i < allowed_extensions.length; i++)
+{
+    if(allowed_extensions[i]==file_extension)
+    {
+        return true; // valid file extension
+    }
+}
+return false;
+}
+function myFunction(abc) {
+    var xy = document.getElementById("abc").value;
+    document.getElementById("abc").value = xy.value.toUpperCase();
+    return false;
+}
+function validateRadio(male,female)  
+{  
+x=0;  
+if(male.checked)   
+{  
+x++;  
+} 
+if(female.checked)  
+{  
+x++;   
+}  
+if(x==0)  
+{  
+alert('Select Male/Female');  
+male.focus();  
+return false;  
+}  
+else  
+{  
+alert('Form Successfully Submitted');  
+window.location.reload()  
+return true;
+}  
+}  

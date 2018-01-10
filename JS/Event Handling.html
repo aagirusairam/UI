@@ -1,0 +1,22 @@
+<html>
+<head>
+<title>Event handling</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+function check(){
+
+
+var x=document.getElementById("name").value;
+document.getElementById("name").value=x.toUpperCase();
+
+}
+</script>
+
+Enter Name: <input type="text" id="name" onblur="check()"><br>
+Enter Password: <input type="password" id="pass" onblur="pass()">
+
+</body>
+</html>
