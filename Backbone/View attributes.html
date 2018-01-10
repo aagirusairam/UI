@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>View Example</title>
+<script src = "https://code.jquery.com/jquery-2.1.3.min.js"
+type = "text/javascript"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"
+type = "text/javascript"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"
+type = "text/javascript"></script>
+</head>
+<body>
+   <div id = "myapp"></div>
+   <script type = "text/javascript">
+      var MyModel = Backbone.Model.extend ({
+            defaults: {
+               name: "sachin tendulkar"
+            }
+         });
+      var ViewDemo = Backbone.View.extend ({
+         initialize: function (){
+            document.write("View is initialized"+"<br>");
+            document.write("The site is: ",this.model.get("Site")+"<br>");
+            document.write("The tag name is: ",this.tagName+"<br>");
+            document.write("The class name is: ",this.className);
+            },
+         });
+      $(function(){
+         var mymodel = new MyModel({ 
+            Site: "Google" 
+         });
+         var myview = new ViewDemo({ 
+            model: mymodel, 
+            tagName:"h1", 
+            className:"center"
+         });
+      });
+      </script>
+   </body>
+</html>

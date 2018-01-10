@@ -1,0 +1,40 @@
+<script type="text/javascript">
+  
+     var Student = Backbone.Model.extend({  
+         url: ' /http://localhost:8080/RestStudent/student/save '
+        	 initialize: function () {
+        	    }
+        	 },
+         defaults:{
+        	 id: 1,
+       	  name:"wavity", 
+       	  city:"hyd" 
+         }
+      });  
+     /* var student = new Student();  
+      student.on("sync", function(method,model){
+    	  document.write("The state of model is"+method+"<br>"+JSON.stringify(model));
+      });
+      document.write(student.url());  
+      var MyCollection=Backbone.Collection({
+    	  model:Student
+      });
+      var myCollection=new MyCollection();
+      myCollection.fetch();
+      Backbone.View.extend({});*/
+    /*  var MyCollection = Backbone.Collection.extend({
+    	    model: Student
+    	    parse:function(response){
+    	    return response;
+    	  }
+    	});
+    	 
+    	var myCollection = new MyCollection();
+    	myCollection.fetch({
+    	    success:function(model,response){
+    	document.write("The state of model is"+method+"<br>"+JSON.stringify(model));
+
+    	    }
+    	});*/
+      
+  </script>

@@ -1,0 +1,37 @@
+<html>
+<head>
+<title> Collection findwhere</title>
+<script src = "https://code.jquery.com/jquery-2.1.3.min.js"
+type = "text/javascript"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"
+type = "text/javascript"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone-min.js"
+type = "text/javascript"></script>
+</head>
+<body>
+<script type = "text/javascript">
+	var Zone=Backbone.Model.extend({
+		defaults: {
+		id:'',
+		name:'',
+		country:''
+	}
+	});
+	var ZONE=Backbone.Collection.extend({
+		model:Zone
+	});
+	$(function(){
+	var zone=new ZONE();
+	zone.set([
+	{id:1, name:'hg', country:'india'},
+	{id:2, name:'gh', country:'india'},	
+	{id:3, name:'as', country:'india'},
+	{id:1, name:'dghas',country:'india'}
+	]);
+	document.write(JSON.stringify(zone.toJSON()));
+	var myzone= zone.findWhere({id:1});
+	document.write(" the values of matched attributes are ",+JSON.stringify(myzone.toJSON()));
+	});
+</script>
+</body>
+</html>
